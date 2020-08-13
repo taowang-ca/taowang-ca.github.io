@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./t01.ts");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./main.ts");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -43567,10 +43567,10 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./t01.ts":
-/*!****************!*\
-  !*** ./t01.ts ***!
-  \****************/
+/***/ "./main.ts":
+/*!*****************!*\
+  !*** ./main.ts ***!
+  \*****************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -43594,6 +43594,10 @@ var Main = /** @class */ (function () {
         var _this = this;
         var loader = PIXI.Loader.shared;
         loader.add("rabbit", "./assets/rabbit.png");
+        loader.add("bg", "./assets/bg.jpg");
+        loader.add("arts", "./assets/spritesheet.json");
+        loader.add("gameData", "./assets/GameDataDefinition.json");
+        loader.add("UIData", "./assets/GameUIDefinition01.json");
         loader.onComplete.once(function () {
             _this.onAssetsLoaded();
         });
@@ -43601,10 +43605,15 @@ var Main = /** @class */ (function () {
         loader.load();
     };
     Main.prototype.onAssetsLoaded = function () {
-        this.createRenderer();
+        var dataGame = PIXI.Loader.shared.resources.gameData.data;
+        var dataUI = PIXI.Loader.shared.resources.UIData.data;
+        // if (dataUI.stageInfo) this.createRenderer(dataUI.stageInfo);
+        if (dataUI.stageInfo)
+            this.createRenderer();
         var stage = this.app.stage;
         var bunny = this.getBunny();
         bunny.position.set(Main.GAME_WIDTH / 2, Main.GAME_HEIGHT / 2);
+        stage.addChild(PIXI.Sprite.from("assets/bg.jpg"));
         stage.addChild(bunny);
         this.app.ticker.add(function () {
             bunny.rotation += 0.05;
@@ -43637,7 +43646,7 @@ var Main = /** @class */ (function () {
         };
         var bunny = new PIXI.Sprite(PIXI.Texture.from("rabbit"));
         bunny.anchor.set(bunnyRotationPoint.x, bunnyRotationPoint.y);
-        bunny.scale.set(2, 2);
+        bunny.scale.set(5, 5);
         return bunny;
     };
     Main.GAME_WIDTH = 400;
