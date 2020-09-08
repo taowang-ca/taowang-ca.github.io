@@ -1,0 +1,1243 @@
+{
+    "gameName": "Adventure Capitalist",
+    "description": "A mini clone of Adventure Capitalist game",
+    "Version": 1,
+    "stageInfo": {
+        "gameWidth": 400,
+        "gameHeight": 800,
+        "stageBgColor": "0x2A3744"
+    },
+    "progressIndicator": {
+        "type": 1,
+        "x": 110,
+        "y": 62,
+        "indicatorDef": {
+            "backgroundStyle": {
+                "width": 265,
+                "height": 30,
+                "lineStyle": {
+                    "width": 2,
+                    "color": "0xFFFF66"
+                },
+                "fillStyle": {
+                    "color": "0x989898",
+                    "alpha": 1
+                }
+            },
+            "barStyle": {
+                "width": 263,
+                "height": 28,
+                "fillStyle": {
+                    "color": "0x35CC5A",
+                    "alpha": 1
+                }
+            },
+            "barX": 1,
+            "barY": 1
+        },
+        "amountDef": {
+            "x": 132,
+            "y": 16,
+            "textStyle": {
+                "fontFamily": ["Arial"],
+                "fontSize": 18,
+                "fontWeight": 500,
+                "fill": "0xFFFFFF",
+                "align": "center",
+                "dropShadow": true,
+                "dropShadowDistance": 1
+            }
+        }
+    },
+    "wrapperGroups": [
+        {
+            "wrapperId": "fixedGroups",
+            "wrapperType": "fixedItem",
+            "x": 0,
+            "y": 0,
+            "width": 400,
+            "height": 800,
+            "gameUIGroups": [
+                {
+                    "groupId": "gameBg",
+                    "layout": "fixed",
+                    "interactive": false,
+                    "x": 0,
+                    "y": 0,
+                    "w": 400,
+                    "h": 800,
+                    "elementDataList": [
+                        {
+                            "elementId": "background",
+                            "elementType": "Rectangle",
+                            "type": "Rectangle",
+                            "initParameters": {
+                                "rectangleDef": {
+                                    "width": 400,
+                                    "height": 800,
+                                    "fillStyle": {
+                                        "color": "0x2A3744",
+                                        "alpha": 1
+                                    }
+                                }
+                            },
+                            "initProperties": []
+                        }
+                    ]
+                },
+                {
+                    "groupId": "gameTitle",
+                    "layout": "fixed",
+                    "interactive": false,
+                    "x": 0,
+                    "y": 0,
+                    "w": 400,
+                    "h": 100,
+                    "elementDataList": [
+                        {
+                            "elementId": "titleBg",
+                            "elementType": "Rectangle",
+                            "initParameters": {
+                                "rectangleDef": {
+                                    "width": 400,
+                                    "height": 70,
+                                    "fillStyle": {
+                                        "color": "0x6BBEE5",
+                                        "alpha": 1
+                                    }
+                                },
+                                "radius": 10
+                            },
+                            "initProperties": {
+                                "x": 0,
+                                "y": 10
+                            }
+                        },
+                        {
+                            "elementId": "titleIcon",
+                            "elementType": "Sprite",
+                            "initParameters": {
+                                "name": "adc.png"
+                            },
+                            "initProperties": {
+                                "x": 20,
+                                "y": 12,
+                                "scale": {"x": 0.5, "y": 0.5}
+                            }
+                        },
+                        {
+                            "elementId": "titleLabel",
+                            "elementType": "Label",
+                            "initParameters": {
+                                "text": "Game Layout A",
+                                "style": {
+                                    "fontFamily": ["Arial"],
+                                    "fontSize": 30,
+                                    "fontWeight": 600,
+                                    "fill": "0xFFFFFF",
+                                    "align": "center",
+                                    "dropShadow": true,
+                                    "dropShadowDistance": 2
+                                }
+                            },
+                            "initProperties": {
+                                "x": 100,
+                                "y": 30
+                            },
+                            "responseList": [
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "",
+                                            "stateValue": 0
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "scale": {"x": 0.55, "y": 0.55}
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "wrapperId": "businessItem",
+            "wrapperType": "listItem",
+            "x": 0,
+            "y": 100,
+            "width": 380,
+            "height": 125,
+            "gameUIGroups": [
+                {
+                    "groupId": "business",
+                    "groupType": "business",
+                    "layout": "fixed",
+                    "interactive": true,
+                    "x": 10,
+                    "y": 0,
+                    "width": 80,
+                    "height": 80,
+                    "elementDataList": [
+                        {
+                            "elementId": "businessBg",
+                            "elementType": "Rectangle",
+                            "initParameters": {
+                                "rectangleDef": {
+                                    "width": 90,
+                                    "height": 98,
+                                    "lineStyle": {
+                                        "width": 2,
+                                        "color": "0x66FF33"
+                                    },
+                                    "fillStyle": {
+                                        "color": "0x2EA3D4",
+                                        "alpha": 1
+                                    }
+                                },
+                                "radius": 10
+                            },
+                            "initProperties": {
+                                "x": 0,
+                                "y": 0
+                            },
+                            "responseList": [
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 1
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": false
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 2
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": true,
+                                        "scale": {"x": 1, "y": 0.5},
+                                        "y": 45
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 3
+                                        },
+                                        {
+                                            "stateId": "produce",
+                                            "stateValue": 10
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": true,
+                                        "scale": {"x": 1, "y": 1},
+                                        "y": 0
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 3
+                                        },
+                                        {
+                                            "stateId": "produce",
+                                            "stateValue": 11
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": false,
+                                        "scale": {"x": 1, "y": 1},
+                                        "y": 0
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "elementId": "businessIcon",
+                            "elementType": "Sprite",
+                            "initParameters": {
+                                "name": "adc.png"
+                            },
+                            "initProperties": {
+                                "x": 45,
+                                "y": 50,
+                                "scale": {"x": 0.65, "y": 0.65},
+                                "anchor": {"x": 0.5, "y": 0.5}
+                            },
+                            "responseList": [
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 1
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "y": 26,
+                                        "scale": {"x": 0.3, "y": 0.3},
+                                        "alpha": 0.5
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 2
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "y": 26,
+                                        "scale": {"x": 0.3, "y": 0.3},
+                                        "alpha": 1
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 3
+                                        },
+                                        {
+                                            "stateId": "produce",
+                                            "stateValue": 10
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "y": 50,
+                                        "scale": {"x": 0.65, "y": 0.65},
+                                        "alpha": 1
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 3
+                                        },
+                                        {
+                                            "stateId": "produce",
+                                            "stateValue": 11
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "y": 50,
+                                        "scale": {"x": 0.65, "y": 0.65},
+                                        "alpha": 1
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "elementId": "businessBuy",
+                            "elementType": "Label",
+                            "initParameters": {
+                                "text": "Buy",
+                                "style": {
+                                    "fontFamily": ["Arial"],
+                                    "fontSize": 22,
+                                    "fontWeight": 400,
+                                    "fill": "0xFFFFFF",
+                                    "align": "center",
+                                    "dropShadow": true,
+                                    "dropShadowDistance": 1
+                                }
+                            },
+                            "initProperties": {
+                                "x": 25,
+                                "y": 46
+                            },
+                            "responseList": [
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 1
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "alpha": 0.5
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 2
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "alpha": 1
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 3
+                                        },
+                                        {
+                                            "stateId": "produce",
+                                            "stateValue": 10
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": false
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 3
+                                        },
+                                        {
+                                            "stateId": "produce",
+                                            "stateValue": 11
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": false
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "elementId": "businessCost",
+                            "elementType": "Label",
+                            "initParameters": {
+                                "text": "Cost:",
+                                "style": {
+                                    "fontFamily": ["Arial"],
+                                    "fontSize": 18,
+                                    "fontWeight": 400,
+                                    "fill": "0xFFFFFF",
+                                    "align": "center",
+                                    "dropShadow": true,
+                                    "dropShadowDistance": 1
+                                }
+                            },
+                            "initProperties": {
+                                "x": 45,
+                                "y": 80,
+                                "anchor":  {"x": 0.5, "y": 0.5}
+                            },
+                            "responseList": [
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 1
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "alpha": 0.5
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 2
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "alpha": 1
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 3
+                                        },
+                                        {
+                                            "stateId": "produce",
+                                            "stateValue": 10
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": false
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 3
+                                        },
+                                        {
+                                            "stateId": "produce",
+                                            "stateValue": 11
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": false
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "groupId": "manager",
+                    "groupType": "manager",
+                    "layout": "fixed",
+                    "interactive": true,
+                    "x": 105,
+                    "y": 0,
+                    "width": 40,
+                    "height": 40,
+                    "elementDataList": [
+                        {
+                            "elementId": "managerBg",
+                            "elementType": "Rectangle",
+                            "initParameters": {
+                                "rectangleDef": {
+                                    "width": 136,
+                                    "height": 53,
+                                    "lineStyle": {
+                                        "width": 2,
+                                        "color": "0x66FF33"
+                                    },
+                                    "fillStyle": {
+                                        "color": "0x2EA3D4",
+                                        "alpha": 1
+                                    }
+                                },
+                                "radius": 10
+                            },
+                            "initProperties": {
+                                "x": 0,
+                                "y": 0
+                            },
+                            "responseList": [
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 1
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": false
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 2
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": false
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 3
+                                        },
+                                        {
+                                            "stateId": "manager",
+                                            "stateValue": 1
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": false
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 3
+                                        },
+                                        {
+                                            "stateId": "manager",
+                                            "stateValue": 2
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": true
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 3
+                                        },
+                                        {
+                                            "stateId": "manager",
+                                            "stateValue": 3
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": false
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "elementId": "managerIcon",
+                            "elementType": "Sprite",
+                            "initParameters": {
+                                "name": "adc.png"
+                            },
+                            "initProperties": {
+                                "x": 75,
+                                "y": 3,
+                                "scale": {"x": 0.38, "y": 0.38}
+                            },
+                            "responseList": [
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 1
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": false
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 2
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": false
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 3
+                                        },
+                                        {
+                                            "stateId": "manager",
+                                            "stateValue": 1
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": true,
+                                        "alpha": 0.3
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 3
+                                        },
+                                        {
+                                            "stateId": "manager",
+                                            "stateValue": 2
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": true,
+                                        "alpha": 1
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 3
+                                        },
+                                        {
+                                            "stateId": "manager",
+                                            "stateValue": 3
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": true,
+                                        "alpha": 1,
+                                        "x": 0,
+                                        "y": 10,
+                                        "scale": {"x": 0.5, "y": 0.5}
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "elementId": "managerHire",
+                            "elementType": "Label",
+                            "initParameters": {
+                                "text": "Hire",
+                                "style": {
+                                    "fontFamily": ["Arial"],
+                                    "fontSize": 20,
+                                    "fontWeight": 400,
+                                    "fill": "0xFFFFFF",
+                                    "align": "center",
+                                    "dropShadow": true,
+                                    "dropShadowDistance": 1
+                                }
+                            },
+                            "initProperties": {
+                                "x": 25,
+                                "y": 5
+                            },
+                            "responseList": [
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 1
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": false
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 2
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": false
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 3
+                                        },
+                                        {
+                                            "stateId": "manager",
+                                            "stateValue": 1
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": true,
+                                        "alpha": 0.5
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 3
+                                        },
+                                        {
+                                            "stateId": "manager",
+                                            "stateValue": 2
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": true,
+                                        "alpha": 1
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 3
+                                        },
+                                        {
+                                            "stateId": "manager",
+                                            "stateValue": 3
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": false
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "elementId": "managerWage",
+                            "elementType": "Label",
+                            "initParameters": {
+                                "text": "Cost:",
+                                "style": {
+                                    "fontFamily": ["Arial"],
+                                    "fontSize": 16,
+                                    "fontWeight": 400,
+                                    "fill": "0xFFFFFF",
+                                    "align": "center",
+                                    "dropShadow": true,
+                                    "dropShadowDistance": 1
+                                }
+                            },
+                            "initProperties": {
+                                "x": 40,
+                                "y": 30,
+                                "anchor": {"x": 0.5, "y": 0}
+                            },
+                            "responseList": [
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 1
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": false
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 2
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": false
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 3
+                                        },
+                                        {
+                                            "stateId": "manager",
+                                            "stateValue": 1
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": true,
+                                        "alpha": 0.5
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 3
+                                        },
+                                        {
+                                            "stateId": "manager",
+                                            "stateValue": 2
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": true,
+                                        "alpha": 1
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 3
+                                        },
+                                        {
+                                            "stateId": "manager",
+                                            "stateValue": 3
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": false
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "groupId": "upgrade",
+                    "groupType": "upgrade",
+                    "layout": "fixed",
+                    "interactive": true,
+                    "x": 250,
+                    "y": 0,
+                    "width": 40,
+                    "height": 40,
+                    "elementDataList": [
+                        {
+                            "elementId": "upgradeBg",
+                            "elementType": "Rectangle",
+                            "initParameters": {
+                                "rectangleDef": {
+                                    "width": 136,
+                                    "height": 53,
+                                    "lineStyle": {
+                                        "width": 2,
+                                        "color": "0x66FF33"
+                                    },
+                                    "fillStyle": {
+                                        "color": "0x2EA3D4",
+                                        "alpha": 1
+                                    }
+                                },
+                                "radius": 10
+                            },
+                            "initProperties": {
+                                "x": -5,
+                                "y": 0
+                            },
+                            "responseList": [
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 1
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": false
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 2
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": false
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 3
+                                        },
+                                        {
+                                            "stateId": "upgrade",
+                                            "stateValue": 1
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": false
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 3
+                                        },
+                                        {
+                                            "stateId": "upgrade",
+                                            "stateValue": 2
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": true
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 3
+                                        },
+                                        {
+                                            "stateId": "upgrade",
+                                            "stateValue": 3
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": false
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "elementId": "upgradeIcon",
+                            "elementType": "Sprite",
+                            "initParameters": {
+                                "name": "upgrade.png"
+                            },
+                            "initProperties": {
+                                "x": 80,
+                                "y": 3,
+                                "scale": {"x": 0.36, "y": 0.36}
+                            },
+                            "responseList": [
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 1
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": false
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 2
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": false
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 3
+                                        },
+                                        {
+                                            "stateId": "upgrade",
+                                            "stateValue": 1
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": true,
+                                        "alpha": 0.3
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 3
+                                        },
+                                        {
+                                            "stateId": "upgrade",
+                                            "stateValue": 2
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": true,
+                                        "alpha": 1
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 3
+                                        },
+                                        {
+                                            "stateId": "upgrade",
+                                            "stateValue": 3
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": true,
+                                        "alpha": 1,
+                                        "x": 66,
+                                        "y": 10,
+                                        "scale": {"x": 0.5, "y": 0.5}
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "elementId": "upgradeTitle",
+                            "elementType": "Label",
+                            "initParameters": {
+                                "text": "Upgrade",
+                                "style": {
+                                    "fontFamily": ["Arial"],
+                                    "fontSize": 20,
+                                    "fontWeight": 400,
+                                    "fill": "0xFFFFFF",
+                                    "align": "center",
+                                    "dropShadow": true,
+                                    "dropShadowDistance": 1
+                                }
+                            },
+                            "initProperties": {
+                                "x": 0,
+                                "y": 5
+                            },
+                            "responseList": [
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 1
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": false
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 2
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": false
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 3
+                                        },
+                                        {
+                                            "stateId": "upgrade",
+                                            "stateValue": 1
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": true,
+                                        "alpha": 0.5
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 3
+                                        },
+                                        {
+                                            "stateId": "upgrade",
+                                            "stateValue": 2
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": true,
+                                        "alpha": 1
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 3
+                                        },
+                                        {
+                                            "stateId": "upgrade",
+                                            "stateValue": 3
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": false
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "elementId": "upgradeCost",
+                            "elementType": "Label",
+                            "initParameters": {
+                                "text": "Cost:",
+                                "style": {
+                                    "fontFamily": ["Arial"],
+                                    "fontSize": 16,
+                                    "fontWeight": 400,
+                                    "fill": "0xFFFFFF",
+                                    "align": "center",
+                                    "dropShadow": true,
+                                    "dropShadowDistance": 1
+                                }
+                            },
+                            "initProperties": {
+                                "x": 48,
+                                "y": 30,
+                                "anchor": {"x": 0.5, "y": 0}
+                            },
+                            "responseList": [
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 1
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": false
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 2
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": false
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 3
+                                        },
+                                        {
+                                            "stateId": "upgrade",
+                                            "stateValue": 1
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": true,
+                                        "alpha": 0.5
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 3
+                                        },
+                                        {
+                                            "stateId": "upgrade",
+                                            "stateValue": 2
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": true,
+                                        "alpha": 1
+                                    }
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "stateId": "business",
+                                            "stateValue": 3
+                                        },
+                                        {
+                                            "stateId": "upgrade",
+                                            "stateValue": 3
+                                        }
+                                    ],
+                                    "responseProperties": {
+                                        "visible": false
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

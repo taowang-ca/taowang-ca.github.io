@@ -1,0 +1,58 @@
+{
+    "gameName": "Adventure Capitalist",
+    "description": "A mini clone of Adventure Capitalist game",
+    "Version": 1,
+    "initialCapital": 1500,
+    "BusinessList": [
+        {
+            "businessId": "tour",
+            "acquireCost": 500,
+            "productionCycle": 2,
+            "profitPerCycle": 200,
+            "managerId": "robert",
+            "managerWage": 3000,
+            "upgradeCost": 2000,
+            "upgradeProfitRate": 1.5
+        },
+        {
+            "businessId": "bar",
+            "acquireCost": 2000,
+            "productionCycle": 5,
+            "profitPerCycle": 500,
+            "managerId": "tina",
+            "managerWage": 6000,
+            "upgradeCost": 5000,
+            "upgradeProfitRate": 2
+        },
+        {
+            "businessId": "taxi",
+            "acquireCost": 10000,
+            "productionCycle": 15,
+            "profitPerCycle": 1800,
+            "managerId": "tom",
+            "managerWage": 8000,
+            "upgradeCost": 9000,
+            "upgradeProfitRate": 3
+        },
+        {
+            "businessId": "hotel",
+            "acquireCost": 500000,
+            "productionCycle": 60,
+            "profitPerCycle": 10000,
+            "managerId": "carl",
+            "managerWage": 11000,
+            "upgradeCost": 50000,
+            "upgradeProfitRate": 1.5
+        },
+        {
+            "businessId": "airline",
+            "acquireCost": 300000000,
+            "productionCycle": 86400,
+            "profitPerCycle": 18000000,
+            "managerId": "emma",
+            "managerWage": 80000,
+            "upgradeCost": 2500000,
+            "upgradeProfitRate": 1.2
+        }
+    ]
+}
